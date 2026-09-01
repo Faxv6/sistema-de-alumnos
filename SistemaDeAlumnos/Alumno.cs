@@ -3,16 +3,32 @@
 public class Alumno
 {
     public string Nombre { get; set; }
-    public int Legajo { get; set; }
-    public decimal Nota1 { get; set; }
-    public decimal Nota2 { get; set; }
 
-    public Alumno(string nombre, int legajo, decimal nota1, decimal nota2)
+    private int legajo;
+    public int Legajo
+    {
+        get { return legajo; }
+        private set { legajo = value; }
+    }
+
+    private decimal nota1;
+    public decimal Nota1
+    {
+        get { return nota1; }
+        private set { nota1 = value; }
+    }
+
+    private decimal nota2;
+    public decimal Nota2
+    {
+        get { return nota2; }
+        private set { nota2 = value; }
+    }
+
+    public Alumno(string nombre, int legajo)
     {
         Nombre = nombre;
         Legajo = legajo;
-        Nota1 = nota1;
-        Nota2 = nota2;
     }
 
     public decimal Promedio()
@@ -22,26 +38,32 @@ public class Alumno
 
     public bool EstaAprobado()
     {
-        if (Promedio() < 6) return false;
-        else return true;
+        if (Promedio() < 6)
+            return false;
+        else
+            return true;
     }
-
     public void SubirNota()
     {
-        if (Nota1 < 10)
-        {
-            Nota1++;
-        }
-
-        if (Nota2 < 10)
-        {
-            Nota2++;
-        }
+        Nota1 = Math.Min(Nota1 + 1, 10);
+        Nota2 = Math.Min(Nota2 + 1, 10);
     }
 
     public override string ToString()
     {
         return $"{Legajo} - {Nombre} (Promedio: {Promedio()})";
-    } // CS0114: 'Alumno.ToString()' hides inherited member 'object.ToString()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
-}
+    }
 
+    public bool CargarNotas(decimal nota1, decimal nota2)
+    {
+        if (nota1 >= 0 && nota1 <= 10 &&
+            nota2 >= 0 && nota2 <= 10)
+        {
+            Nota1 = nota1;
+            Nota2 = nota2;
+            return true;
+        }
+
+        return false;
+    }
+}
