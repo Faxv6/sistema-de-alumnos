@@ -15,6 +15,11 @@ Alumno Manolo = new Alumno("Manolo", 2, 10.0m, 8.52m);
 //    Nota2 = 7.0m,
 //};
 
+Console.WriteLine($"Nota Manolo {Manolo.Nota1} y {Manolo.Nota2}");
+Manolo.SubirNota();
+Console.WriteLine($"Nota Manolo {Manolo.Nota1} y {Manolo.Nota2}");
+
+
 //Alumno AlumnoPrueba = new Alumno();
 //Error CS7036 - Este error aparece porque se esperan recibir los parámetros para instanciar el nuevo objeto, los cuales son los declarados en el constructor. 
 
@@ -30,3 +35,4 @@ Console.WriteLine($"El alumno {Manolo.Nombre} tiene un legaje N° {Manolo.Legajo
 
 Console.WriteLine();
 
+Console.WriteLine(Pepe);
