@@ -52,7 +52,7 @@ public class Alumno
     public override string ToString()
     {
         return $"{Legajo} - {Nombre} (Promedio: {Promedio()})";
-    }
+    } 
 
     public bool CargarNotas(decimal nota1, decimal nota2)
     {
