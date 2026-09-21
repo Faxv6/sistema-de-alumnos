@@ -1,6 +1,6 @@
 ﻿namespace SistemaDeAlumnos;
 
-public class Alumno : Persona
+public class Alumno : Persona, IExportable
 {
     private int legajo;
     public int Legajo
@@ -68,6 +68,11 @@ public class Alumno : Persona
 
     public override string Presentarse()
     {
-    return $"Hola, soy {Nombre}, alumno con legajo {Legajo}.";
+        return $"Hola, soy {Nombre}, alumno con legajo {Legajo}.";
     }
+
+    public string ExportarLinea()
+    {
+        return $"{Nombre};{Documento};{Legajo};{Nota1};{Nota2}";
+    }   
 }

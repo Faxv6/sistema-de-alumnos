@@ -113,6 +113,30 @@ while (!salir)
     {
         Console.WriteLine(persona.Presentarse());
     }
+
+    List<Alumno> alumnos = new List<Alumno>();
+
+    alumnos.Add(new Alumno("Ana Pérez", 12345678, 1234));
+    alumnos.Add(new Alumno("Juan López", 23456789, 2345));
+
+    List<Profesor> profesores = new List<Profesor>();
+
+    profesores.Add(new Profesor("Marta Díaz", 34567890, "Programación"));
+    profesores.Add(new Profesor("Carlos Gómez", 45678901, "Matemática"));
+
+    List<IExportable> exportables = new List<IExportable>();
+
+    exportables.Add(alumnos[0]);
+    exportables.Add(profesores[0]);
+    exportables.Add(materias[0]);
+    exportables.Add(alumnos[1]);
+    exportables.Add(materias[1]);
+    exportables.Add(profesores[1]);
+
+    foreach (IExportable elemento in exportables)
+{
+    Console.WriteLine(elemento.ExportarLinea());
+}
 }
 
 

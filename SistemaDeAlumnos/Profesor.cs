@@ -1,6 +1,6 @@
 namespace SistemaDeAlumnos;
 
-public class Profesor : Persona
+public class Profesor : Persona, IExportable
 {
     public string Materia { get; set; }
 
@@ -8,5 +8,10 @@ public class Profesor : Persona
         : base(nombre, documento)
     {
         Materia = materia;
+    }
+
+    public string ExportarLinea()
+    {
+        return $"{Nombre};{Documento};{Materia}";
     }
 }
