@@ -10,4 +10,10 @@ public class Persona
         Nombre = nombre;
         Documento = documento;
     }
+
+    public virtual string Presentarse()
+    {
+        return $"Hola, soy {Nombre}.";
+    }
+    //CS0506: 'Alumno.Presentarse()': cannot override inherited member'Persona.Presentarse()' because it is not marked virtual, abstract, or override
 }

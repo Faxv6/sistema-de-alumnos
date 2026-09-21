@@ -104,7 +104,15 @@ while (!salir)
             break;
     }
 
+    List<Persona> personas = new List<Persona>();
 
+    personas.Add(new Alumno("Ana Pérez", 12345678, 1234));
+    personas.Add(new Profesor("Marta Díaz", 23456789, "Programación"));
+
+    foreach (Persona persona in personas)
+    {
+        Console.WriteLine(persona.Presentarse());
+    }
 }
 
 

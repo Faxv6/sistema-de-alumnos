@@ -65,4 +65,9 @@ public class Alumno : Persona
 
         return false;
     }
+
+    public override string Presentarse()
+    {
+    return $"Hola, soy {Nombre}, alumno con legajo {Legajo}.";
+    }
 }
