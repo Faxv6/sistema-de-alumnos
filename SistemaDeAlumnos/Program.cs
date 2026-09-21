@@ -21,14 +21,16 @@ while (!salir)
         case "1":
             Console.WriteLine("AÑADIR UN ALUMNO");
             Console.WriteLine();
-
             Console.Write("Ingrese el nombre del alumno: ");
             string Nombre = Console.ReadLine();
+
+            Console.Write("Ingrese el documento: ");
+            int Documento = int.Parse(Console.ReadLine());
+
             Console.Write("Ingrese el N° de legajo: ");
             int Legajo = int.Parse(Console.ReadLine());
 
-            ListaAlumnos.Add(new Alumno(Nombre, Legajo));
-            break;
+            ListaAlumnos.Add(new Alumno(Nombre, Documento, Legajo));           break;
         case "2":
             Console.WriteLine("LISTA DE ALUMNOS");
             Console.WriteLine();
