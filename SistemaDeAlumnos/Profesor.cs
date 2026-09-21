@@ -14,4 +14,9 @@ public class Profesor : Persona, IExportable
     {
         return $"{Nombre};{Documento};{Materia}";
     }
+
+        public override string Presentarse()
+    {
+        return $"Hola, soy {Nombre}, Profesor aura.";
+    }
 }
